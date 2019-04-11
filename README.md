@@ -53,11 +53,11 @@ Nach Anleitung von Herr Berger:
 ```
 *Repository Tree*<br>
 bmestry <br>
-|_ Modul300_Bryan <br>
-  |_ pics (Ausschliesschlich für Dokumentation) <br>
-  |_ Wordpress <br>
-  |  |_ docker-compose.yml <br>
-  |_ README.md (Dokumenatation) <br>
+|__ Modul300_Bryan <br>
+  |__ pics (Ausschliesschlich für Dokumentation) <br>
+  |__ Wordpress <br>
+  |  |__ docker-compose.yml <br>
+  |__ README.md (Dokumenatation) <br>
 
 
 
