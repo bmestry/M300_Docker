@@ -52,12 +52,12 @@ Nach Anleitung von Herr Berger:
   git status
 ```
 *Repository Tree*<br>
-bmestry
-|_ Modul300_Bryan
-  |_ pics (Ausschliesschlich für Dokumentation)
-  |_ Wordpress
-  |  |_ docker-compose.yml
-  |_ README.md (Dokumenatation)
+bmestry <br>
+|_ Modul300_Bryan <br>
+  |_ pics (Ausschliesschlich für Dokumentation) <br>
+  |_ Wordpress <br>
+  |  |_ docker-compose.yml <br>
+  |_ README.md (Dokumenatation) <br>
 
 
 
