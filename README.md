@@ -43,13 +43,62 @@ Nach Anleitung von Herr Berger:
  --> git config --global user.name "bmestry"  
  --> git config --global user.email "bryan.lo99la@gmail.com" 
  
+*Klonen des Repositorys*<br>
+1. Erstelltes Repository auf GitHub öffen. Auf Clone/Download drücken und den Link kopieren.
+2. Bash öffnen und Ordner für dieses Repository oder allgemeiner Ordner für kommende Repositories erstellen.
+3. Zum Directory wechseln und folgender Befehl ausführen
+```ruby
+  git clone https://github.com/bmestry/M300_Bryan
+  git status
+```
+*Repository Tree*<br>
+bmestry
+|_ Modul300_Bryan
+  |_ pics (Ausschliesschlich für Dokumentation)
+  |_ Wordpress
+  |  |_ docker-compose.yml
+  |_ README.md (Dokumenatation)
+
+
+
+## Wordpress Webserver per Docker aufsetzen 
  
  
- 
- 
- 
- 
- 
+### Dockerfile
+
+```yaml
+  version: '3.3'
+
+services:
+   datenbank:
+     image: mysql:5.7
+     volumes:
+       - db_data:/var/lib/mysql
+     restart: always
+     environment:
+       MYSQL_ROOT_PASSWORD: 1234
+       MYSQL_DATABASE: wordpress
+       MYSQL_USER: bryan
+       MYSQL_PASSWORD: 1234
+
+   wordpress:
+     depends_on:
+       - datenbank
+     image: wordpress:latest
+     ports:
+       - "8080:80"
+     restart: always
+     environment:
+       WORDPRESS_DB_HOST: datenbank:3306
+       WORDPRESS_DB_USER: bryan
+       WORDPRESS_DB_PASSWORD: 1234
+       WORDPRESS_DB_NAME: wordpress
+volumes:
+    db_data: {}
+```
+
+
+### Test
  
  
  
