@@ -51,15 +51,6 @@ Nach Anleitung von Herr Berger:
   git clone https://github.com/bmestry/M300_Bryan
   git status
 ```
-*Repository Tree*<br>
-bmestry <br>
-|__ Modul300_Bryan <br>
-  |__ pics (Ausschliesschlich für Dokumentation) <br>
-  |__ Wordpress <br>
-  |  |__ docker-compose.yml <br>
-  |__ README.md (Dokumenatation) <br>
-
-
 
 ## Wordpress Webserver per Docker aufsetzen 
  
@@ -99,7 +90,13 @@ volumes:
 
 
 ### Test
+
+
+
+## LB1 Wissenstand
+
  
+## Reflexion
  
  
  
