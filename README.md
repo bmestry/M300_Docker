@@ -6,8 +6,11 @@
 * Wissensstand vor LB2
 * Tools
 * Wordpress Webserver per Docker aufsetzen 
-  * Dockerfile - Versuch
-  * Test
+  * Dockerfile
+  * Docker Compose File
+* Test
+  * Dockerfile
+  * Docker Compose File
 * LB2 Wissenstand
 * Reflexion
 
@@ -124,7 +127,7 @@ volumes:
 Als erstes musste meine LB in 2 container aufgeteilt werden. Auf der einen Seite haben wir den Datenbank Server und auf der anderen den Wordpress Server. Der Wordpress Webserver muss auf die Datenbank über einen Port verbinden können. Hier habe ich denn Standard Port 3306 belassen, da dieser ohni Forwarding sowieso nach aussen gezeigt wird. Die Umgebungsvariabeln beider Dienste kann Online gefunden werden. Somit wurden diese in mein Script eingebunden. Der Port 80 muss durch ein weiterleitenden Port nach aussen gezeigt wurde, da dieser Port von Host selbst schon benutzt wird. Hier habe ich mich für den Standard Weiterleitungs HTTP Port entschieden: 8080.
 
 
-### Test
+## Test
 
 **Dockerfile** <br>
 1. Dockerfile speicher
