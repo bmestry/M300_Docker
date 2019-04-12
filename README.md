@@ -24,7 +24,7 @@ Zuvor noch nie mit Git gearbeitet.
 Nun habe ich dank diesem Modul mehr Erfahrung mit Git und kann es einwandfrei nutzen.
 
 **Docker** <br>
-
+Noch gar kein Wissen nur 2 mal ein docker run Befehl ausgeführt, ohne genau zu Wissen was gerade passiert. In die kalte Theorie geworfen worden. Und sonst noch gar kein Praktisches Wissen.
 
 ## Tools
 **GitHUB** <br>
