@@ -16,10 +16,6 @@ RUN yum install -y https://repo.mysql.com/mysql-community-minimal-release-el7.rp
 
 VOLUME /var/lib/mysql
 
-COPY docker-entrypoint.sh /entrypoint.sh
-COPY healthcheck.sh /healthcheck.sh
-ENTRYPOINT ["/entrypoint.sh"]
-HEALTHCHECK CMD /healthcheck.sh
 
 ENV MYSQL_ROOT_PASSWORD: 1234
 ENV MYSQL_DATABASE: wordpress
