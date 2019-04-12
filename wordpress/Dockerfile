@@ -1,20 +1,17 @@
-FROM oraclelinux:7-slim
+FROM ubuntu:16.04
 
-ARG MYSQL_SERVER_PACKAGE=mysql-community-server-minimal-5.7.25
-ARG MYSQL_SHELL_PACKAGE=mysql-shell-8.0.15
+MAINTAINER Bryan
 
-# Install server
-RUN yum install -y https://repo.mysql.com/mysql-community-minimal-release-el7.rpm \
-      https://repo.mysql.com/mysql-community-release-el7.rpm \
-  && yum-config-manager --enable mysql57-server-minimal \
-  && yum install -y \
-      $MYSQL_SERVER_PACKAGE \
-      $MYSQL_SHELL_PACKAGE \
-      libpwquality \
-  && yum clean all \
-  && mkdir /docker-entrypoint-initdb.d
+#Passwort  des Root Users ändern
+RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password password 1234'
+RUN debconf-set-selections <<< 'mysql-server mysql-server/root_password_again password 1234'
 
-VOLUME /var/lib/mysql
+#Installation von Mysql per APT
+RUN apt-get update
+RUN apt-get install -y mysql-server
+
+#Remote Connection auf Dienst zulassen
+RUN sed -i -e"s/^bind-address\s*=\s*127.0.0.1/bind-address = 0.0.0.0/" /etc/mysql/my.cnf
 
 
 ENV MYSQL_ROOT_PASSWORD: 1234
@@ -22,5 +19,12 @@ ENV MYSQL_DATABASE: wordpress
 ENV MYSQL_USER: bryan
 ENV MYSQL_PASSWORD: 1234
 
-EXPOSE 3306 3306
+EXPOSE 3306
+
+VOLUME /var/lib/mysql
+
 CMD ["mysqld"]
+
+
+
+

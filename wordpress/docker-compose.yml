@@ -1,25 +1,25 @@
 version: '3.3' #Hier wird die Docker Version
 
-services:
-   datenbank:
-     image: mysql:5.7
-     volumes:
-       - db_data:/var/lib/mysql
-     restart: always
-     environment:
+services:                                  #Anfang der Service Konfiguration/Definition
+   datenbank:                              #Name des ersten Service
+     image: mysql:5.7                      #Image per Imagename aufgerufen
+     volumes:                              #Volumes definierung
+       - db_data:/var/lib/mysql            #Pfad zum Volume
+     restart: always                       #Restart argument auf always für immer wieder einen Neustart
+     environment:                          #environment variabeln werden gesetzt
        MYSQL_ROOT_PASSWORD: 1234
        MYSQL_DATABASE: wordpress
        MYSQL_USER: bryan
        MYSQL_PASSWORD: 1234
 
-   wordpress:
-     depends_on:
+   wordpress:                              #Name des ersten Service
+     depends_on:                           #Abhängigkeit zum Datenbank Container erstellen
        - datenbank
-     image: wordpress:latest
-     ports:
+     image: wordpress:latest               #Image per Imagename aufgerufen
+     ports:                                #Port Exposing
        - "8080:80"
-     restart: always
-     environment:
+     restart: always                       #Restart argument auf always für immer wieder einen Neustart
+     environment:                          #environment variabeln werden gesetzt
        WORDPRESS_DB_HOST: datenbank:3306
        WORDPRESS_DB_USER: bryan
        WORDPRESS_DB_PASSWORD: 1234
